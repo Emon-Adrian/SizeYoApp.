@@ -25,7 +25,13 @@ import { TailwindProvider } from "tailwindcss-react-native";
 import OnboardScreen from './screens/OnboardScreen';
 import GetStarted from './screens/GetStarted'
 import Register from './screens/Register';
-import GetOTP from './screens/GetOTP';
+import GetOTP from './screens/GetOTP'
+import Profile from './screens/Profile'
+import ServiceProviders from './screens/ServiceProviders';
+import Pharmacies from './screens/Pharmacies';
+import TreatmentHistory from './screens/TreatmentHistory';
+import PresentComplaint from './screens/PresentComplaint';
+import Package from './screens/Package';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,16 +45,16 @@ const App: () => Node = () => {
     <NavigationContainer>
       <TailwindProvider>
       <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="OnboardScreen"
         component={OnboardScreen}
         options={{ title: 'Welcome', headerShown: false 
       }} 
-      />
+      /> */}
       <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{ title: 'Welcome', headerShown: false
+        name="Package"
+        component={Package}
+        options={{ title: 'Pharmacies', headerShown: false
       }} 
       />
       </Stack.Navigator>
