@@ -32,6 +32,9 @@ import Pharmacies from './screens/Pharmacies';
 import TreatmentHistory from './screens/TreatmentHistory';
 import PresentComplaint from './screens/PresentComplaint';
 import Package from './screens/Package';
+import CallType from './screens/CallType';
+import Category from './screens/Category';
+import Call from './screens/Call';
 
 const Stack = createNativeStackNavigator();
 
@@ -52,9 +55,9 @@ const App: () => Node = () => {
       }} 
       /> */}
       <Stack.Screen
-        name="Package"
-        component={Package}
-        options={{ title: 'Pharmacies', headerShown: false
+        name="Call"
+        component={Call}
+        options={{ title: 'Pharmacies', 
       }} 
       />
       </Stack.Navigator>
