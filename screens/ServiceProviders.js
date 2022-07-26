@@ -5,9 +5,6 @@ import {SafeAreaView, Text, View, Image, StyleSheet, TouchableOpacity} from 'rea
 const ServiceProviders = () => {
   return (
     <SafeAreaView style={styles.container}>
-        <View className='w-full h-20 bg-red-700'>
-         <Text className="font-bold text-right p-4"></Text>
-      </View>
         <View className='top-16 items-center justify-center'>
           <Text className="text-red-600 px-24 text-center">
           Select a category below to view 

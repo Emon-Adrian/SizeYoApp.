@@ -5,9 +5,6 @@ import {SafeAreaView, Text, View, Image, StyleSheet, TouchableOpacity} from 'rea
 const Profile = () => {
   return (
     <SafeAreaView style={styles.container}>
-            <View className='w-full h-20 bg-red-700'>
-         <Text className="font-bold text-right p-4"></Text>
-      </View>
            <View className='top-16'> 
               <View className='flex-row items-center justify-center gap-5'>
               <Image
@@ -20,7 +17,7 @@ const Profile = () => {
               </View>
               <Text className='text-black text-xl px-6 text-center mt-2'>You are currently subscribed to KAFITTING premium package</Text>
               <Text className='text-black px-6 text-2xl text-center mt-4 font-bold'>Limit balance: 50,000 UGX</Text>
-              <TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.3}>
               <View className='flex-row items-center justify-center gap-5 bg-red-700  text-2xl mt-20 rounded-full'>
               <Image
                source={

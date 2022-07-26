@@ -23,6 +23,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './screens/Home';
 import { TailwindProvider } from "tailwindcss-react-native";
 import OnboardScreen from './screens/OnboardScreen';
+import TabNavigation from './Navigation/TabNavigation';
 import GetStarted from './screens/GetStarted'
 import Register from './screens/Register';
 import GetOTP from './screens/GetOTP'
@@ -48,18 +49,20 @@ const App: () => Node = () => {
     <NavigationContainer>
       <TailwindProvider>
       <Stack.Navigator>
-      {/* <Stack.Screen
+      <Stack.Screen
         name="OnboardScreen"
         component={OnboardScreen}
         options={{ title: 'Welcome', headerShown: false 
       }} 
-      /> */}
-      <Stack.Screen
+      />
+      {/* <Stack.Screen name="Profile" component={Profile} /> */}
+      <Stack.Screen name="GotoProfile" component={TabNavigation} />
+      {/* <Stack.Screen
         name="Call"
         component={Call}
         options={{ title: 'Pharmacies', 
       }} 
-      />
+      /> */}
       </Stack.Navigator>
       </TailwindProvider>
   </NavigationContainer>

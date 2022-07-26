@@ -113,7 +113,7 @@ const slides = [
               <View style={{height: 50}}>
                 <TouchableOpacity
                   style={styles.btn}
-                  onPress={() => navigation.replace('Home')}>
+                  onPress={() => navigation.replace('GotoProfile')}>
                   <Text style={{fontWeight: 'bold', fontSize: 15, color:'#c53535'}}>
                     GET STARTED
                   </Text>
