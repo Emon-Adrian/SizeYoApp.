@@ -49,14 +49,21 @@ const App: () => Node = () => {
     <NavigationContainer>
       <TailwindProvider>
       <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="OnboardScreen"
         component={OnboardScreen}
         options={{ title: 'Welcome', headerShown: false 
       }} 
-      />
+      /> */}
       {/* <Stack.Screen name="Profile" component={Profile} /> */}
-      <Stack.Screen name="GotoProfile" component={TabNavigation} />
+      {/* <Stack.Screen name="GotoProfile" component={TabNavigation} 
+       options={{headerShown: false}}
+      /> */}
+      <Stack.Screen
+       name='getOtp'
+        component={GetOTP}
+        options={{ title: 'Welcome', headerShown: false}}
+      />
       {/* <Stack.Screen
         name="Call"
         component={Call}
