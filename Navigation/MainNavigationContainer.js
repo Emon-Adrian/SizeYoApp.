@@ -10,10 +10,9 @@ import GetStarted from '../screens/GetStarted';
 
 const Stack = createNativeStackNavigator();
 
-const MainContainer = () => {
+const MainNavigationContainer = () => {
   return (
-    <NavigationContainer>
-    <TailwindProvider>
+    
     <Stack.Navigator>
     <Stack.Screen
       name="OnboardScreen"
@@ -28,9 +27,7 @@ const MainContainer = () => {
     }} 
     />
     </Stack.Navigator>
-    </TailwindProvider>
-</NavigationContainer>
   )
 }
 
-export default MainContainer
+export default MainNavigationContainer

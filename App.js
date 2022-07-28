@@ -27,6 +27,7 @@ import TabNavigation from './Navigation/TabNavigation';
 import GetStarted from './screens/GetStarted'
 import Register from './screens/Register';
 import GetOTP from './screens/GetOTP'
+import ReceiveCode from './screens/ReceiveCode';
 import Profile from './screens/Profile'
 import ServiceProviders from './screens/ServiceProviders';
 import Pharmacies from './screens/Pharmacies';
@@ -62,6 +63,11 @@ const App: () => Node = () => {
       <Stack.Screen
        name='getOtp'
         component={GetOTP}
+        options={{ title: 'OTP', headerShown: true}}
+      />
+      <Stack.Screen
+       name='ReceiveCode'
+        component={ReceiveCode}
         options={{ title: 'Welcome', headerShown: false}}
       />
       {/* <Stack.Screen

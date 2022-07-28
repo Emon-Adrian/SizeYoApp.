@@ -1,12 +1,19 @@
 /* eslint-disable prettier/prettier */
-import React from 'react'
-import {SafeAreaView, Text, View, Image, StyleSheet, TouchableOpacity} from 'react-native'
+import React, {useState} from 'react'
+import {SafeAreaView, Text, View, Image, StyleSheet, TouchableOpacity, Alert} from 'react-native'
 import PhoneInput from "react-native-phone-number-input";
 
 
-const GetOTP = () => {
+const GetOTP = ({navigation}) => {
 
-  const [phoneNumber, setPhoneNumber] = React.useState("");
+
+  const [phoneNumber, setPhoneNumber] = useState("");
+  
+  const onSubmit = () => {
+    navigation.navigate("ReceiveCode",  {
+      phoneNumber: phoneNumber
+    })
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -18,9 +25,11 @@ const GetOTP = () => {
            
            <PhoneInput
            defaultCode='UG'
+           value={phoneNumber}
+           onChangeText={(value) => setPhoneNumber(value)}
            />
            <Text className='text-red-700 text-sm mt-10 px-10 text-center'>Enter a valid phone number to receive a verification code</Text>
-           <TouchableOpacity className='' activeOpacity={0.7}>
+           <TouchableOpacity className='' activeOpacity={0.7} onPress={onSubmit}>
             <Text className='text-slate-100 bg-red-700 px-20 text-2xl  py-4 mt-16 border border-gray-700 rounded-full'>Get OTP</Text>
         </TouchableOpacity>
          </View>
