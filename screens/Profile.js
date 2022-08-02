@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
 import {SafeAreaView, Text, View, Image, StyleSheet, TouchableOpacity} from 'react-native'
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome';
+import COLORS from '../constants/Colors';
 
 const Profile = () => {
   return (
@@ -19,11 +21,8 @@ const Profile = () => {
               <Text className='text-black px-6 text-2xl text-center mt-4 font-bold'>Limit balance: 50,000 UGX</Text>
               <TouchableOpacity activeOpacity={0.3}>
               <View className='flex-row items-center justify-center gap-5 bg-red-700  text-2xl mt-20 rounded-full'>
-              <Image
-               source={
-                require('../assets/images/doctor.png')
-             }
-               className='w-8 h-8'
+              <FontAwesome5
+               name='user-md' size={30} style={{color:COLORS.white}}
             />
               <Text className='text-slate-100 uppercase text-2xl'>Call The Doctor</Text>
               </View>

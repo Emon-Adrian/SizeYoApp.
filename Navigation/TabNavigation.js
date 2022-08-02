@@ -8,48 +8,56 @@ import TreatmentHistory from '../screens/TreatmentHistory';
 //import Pharmacies from '../screens/Pharmacies';
 import ServiceProviders from '../screens/ServiceProviders';
 import COLORS from '../constants/Colors';
-import { HomeIcon, ClipboardListIcon, OfficeBuildingIcon } from "react-native-heroicons/solid";
+import { HomeIcon, ClipboardListIcon, OfficeBuildingIcon} from "react-native-heroicons/solid";
 //import doctor from "../assets/images/doctor.png";
 //import history from "../assets/images/history.png";
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
     return (
         <Tab.Navigator 
-        screenOptions={{
-            headerShown:false,
-            tabBarShowLabel:false,
-            //tabBarBackgroundColor:COLORS.red,
-        }}
-        
+        screenOptions={({ route }) =>({
+          headerShown:false,
+          tabBarShowLabel:false,
+          //tabBarBackground:COLORS.green,
+          tabBarStyle:{
+            backgroundColor:COLORS.red,
+            height:60,
+          },
+            tabBarIcon: ({ focused, color, size }) => {
+              let IconName;
+              if(route.name === 'Profile'){
+                IconName = 'home';
+                size=focused? 40: 35;
+                color= focused ? COLORS.white : COLORS.gray;
+              }else if(route.name === 'Service Providers'){
+                IconName = 'user-md'
+                size=focused? 40: 35;
+                color= focused ? COLORS.white : COLORS.gray;
+              }else if(route.name === 'Treatment History'){
+                IconName = 'clipboard';
+                size=focused? 40: 35;
+                color= focused ? COLORS.white : COLORS.gray;
+              }
+              return (
+                <>
+                  <FontAwesome5
+                   name={IconName}
+                   color={color}
+                   size={size}
+                  />
+                </>
+              )
+            }
+        })}
         >
             <Tab.Screen name="Profile" component={Profile}
-              options={{
-                tabBarIcon: ({}) => (
-                    <View>
-                        <HomeIcon color={COLORS.red} size={36} />
-                    </View>
-                )
-              }}
             />
             <Tab.Screen name="Service Providers" component={ServiceProviders} 
-              options={{
-                tabBarIcon: ({}) => (
-                    <View>
-                      <OfficeBuildingIcon color={COLORS.red} size={36} />
-                    </View>
-                )
-              }}
             />
             <Tab.Screen name="Treatment History" component={TreatmentHistory}
-            options={{
-              tabBarIcon: ({}) => (
-                  <View>
-                    <ClipboardListIcon  color={COLORS.red} size={36} />
-                  </View>
-              )
-            }} 
             />
         </Tab.Navigator>
     )

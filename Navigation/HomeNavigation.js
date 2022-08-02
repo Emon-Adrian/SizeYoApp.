@@ -14,15 +14,8 @@ const Stack = createNativeStackNavigator();
 const HomeNavigation = () => (
   <Stack.Navigator>
     <Stack.Screen
-      name="GetStarted"
-      component={GetStarted}
-      options={{
-        headerShown: false,
-      }}
-    />
-    <Stack.Screen
-      name="Register"
-      component={Register}
+      name="TabNavigation"
+      component={TabNavigation}
       options={{
         headerShown: false,
       }}
