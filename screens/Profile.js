@@ -23,7 +23,7 @@ const Profile = () => {
                source={
                 require('../assets/images/doctor.png')
              }
-               className='w-10 h-10'
+               className='w-8 h-8'
             />
               <Text className='text-slate-100 uppercase text-2xl'>Call The Doctor</Text>
               </View>

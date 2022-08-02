@@ -19,13 +19,14 @@ const GetOTP = ({navigation}) => {
     <SafeAreaView style={styles.container}>
          <View className='mt-10 items-center content-center'>
             <Image source={require('../assets/images/logo.png')}
-             className='w-30 p-4 '
+             className='w-30 p-4'
             />
             <Text className='text-gray-700 text-xl mt-16 mb-6'>Choose your country</Text>
            
            <PhoneInput
            defaultCode='UG'
            value={phoneNumber}
+           maxLength = {9}
            onChangeText={(value) => setPhoneNumber(value)}
            />
            <Text className='text-red-700 text-sm mt-10 px-10 text-center'>Enter a valid phone number to receive a verification code</Text>

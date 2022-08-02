@@ -8,23 +8,27 @@ import TreatmentHistory from '../screens/TreatmentHistory';
 //import Pharmacies from '../screens/Pharmacies';
 import ServiceProviders from '../screens/ServiceProviders';
 import COLORS from '../constants/Colors';
-import { HomeIcon } from "react-native-heroicons/solid";
-import doctor from "../assets/images/doctor.png";
-import history from "../assets/images/history.png";
+import { HomeIcon, ClipboardListIcon, OfficeBuildingIcon } from "react-native-heroicons/solid";
+//import doctor from "../assets/images/doctor.png";
+//import history from "../assets/images/history.png";
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
     return (
-        <Tab.Navigator screenOptions={{
+        <Tab.Navigator 
+        screenOptions={{
             headerShown:false,
+            tabBarShowLabel:false,
+            //tabBarBackgroundColor:COLORS.red,
         }}
+        
         >
             <Tab.Screen name="Profile" component={Profile}
               options={{
                 tabBarIcon: ({}) => (
                     <View>
-                        <HomeIcon color={COLORS.red} size={30} />
+                        <HomeIcon color={COLORS.red} size={36} />
                     </View>
                 )
               }}
@@ -32,17 +36,20 @@ const TabNavigator = () => {
             <Tab.Screen name="Service Providers" component={ServiceProviders} 
               options={{
                 tabBarIcon: ({}) => (
-                    <View style={{alignItems: 'center', justifyContent: 'center', top:10}}>
-                        <Image
-                          source={require('./../assets/images/doctor.png')}
-                          resizeMode="contain"
-                          style={{width: 20, height: 20}}
-                        />
+                    <View>
+                      <OfficeBuildingIcon color={COLORS.red} size={36} />
                     </View>
                 )
               }}
             />
-            <Tab.Screen name="Treatment History" component={TreatmentHistory} 
+            <Tab.Screen name="Treatment History" component={TreatmentHistory}
+            options={{
+              tabBarIcon: ({}) => (
+                  <View>
+                    <ClipboardListIcon  color={COLORS.red} size={36} />
+                  </View>
+              )
+            }} 
             />
         </Tab.Navigator>
     )

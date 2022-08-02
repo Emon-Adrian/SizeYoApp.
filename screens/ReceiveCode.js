@@ -19,7 +19,7 @@ const ReceiveCode = ({route, navigation}) => {
        <View className='flex-row items-center content-center gap-4 mb-4'> 
            <PhoneIcon color={COLORS.red} size={30}/>
            <View className='w-60 h-12 text-xl border border-gray-700 px-4 justify-center rounded-m'>
-             <Text className='text-black text-xl'>{route.params.phoneNumber}</Text> 
+             <Text className='text-black text-xl'>+256 {route.params.phoneNumber}</Text> 
            </View>
         </View>     
        <View className='flex-row items-center content-center gap-4'> 
