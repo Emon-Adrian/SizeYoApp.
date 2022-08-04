@@ -20,8 +20,10 @@ import {
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { TailwindProvider } from "tailwindcss-react-native";
+import { TailwindProvider } from 'tailwindcss-react-native';
 import HomeNavigation from './Navigation/HomeNavigation';
+import { Provider } from 'react-redux';
+import {Store }  from './Redux/store';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,11 +34,13 @@ const Stack = createNativeStackNavigator();
 const App: () => Node = () => {
  
   return (
+    <Provider store={Store}>
     <NavigationContainer>
       <TailwindProvider>
          <HomeNavigation/>
       </TailwindProvider>
   </NavigationContainer>
+    </Provider>
   );
 };
 

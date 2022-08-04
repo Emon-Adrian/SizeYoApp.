@@ -4,9 +4,12 @@ import {Text, View, StyleSheet, SafeAreaView, TouchableOpacity, Image} from 'rea
 //import { ShoppingCartIcon,PhoneMissedCallIcon } from "react-native-heroicons/outline";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome';
 import COLORS from '../constants/Colors';
+//import SelectList from 'react-native-dropdown-select-list'
 
 const Home = ({navigation}) => {
 
+  // const [selected, setSelected] = React.useState("");
+  // const data = [{key:'1',value:'Jammu & Kashmir'}];
   
   return (
     <SafeAreaView style={styles.container}>
@@ -14,10 +17,15 @@ const Home = ({navigation}) => {
          <FontAwesome5 name='ellipsis-v' color={COLORS.white} size={20}/>
       </View>
        <View className='mt-12 items-center justify-center'>
-          <Text className='text-gray-700 text-2xl'>Hello Nethan</Text>
+          <Text className='text-gray-700 text-2xl font-extrabold'>Hello Nethan</Text>
           <Text className='text-gray-600 text-xl mt-10'>Select your preferred Insurer</Text>
          {/* select form */}
-        
+        {/* <SelectList
+          data={data}
+          setSelected={setSelected}
+        /> */}
+
+
         <TouchableOpacity onPress={()=>navigation.navigate('Profile')}> 
         <View className=' flex-row items-center gap-5 rounded-full bg-red-700 px-5  py-1 mt-5'>
         <FontAwesome5 name='cart-plus' color={COLORS.white} size={40}/>
