@@ -1,10 +1,12 @@
+/* eslint-disable jsx-quotes */
 /* eslint-disable prettier/prettier */
 import React from 'react'
 import {SafeAreaView, Text, View, Image, StyleSheet, TouchableOpacity} from 'react-native'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome';
+import {Biotech} from 'react-native-vector-icons/MaterialIcons'
 import COLORS from '../constants/Colors';
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
            <View className='top-16'> 
@@ -30,8 +32,8 @@ const Profile = () => {
 
              
             <View className='flex-row gap-4 items-center justify-center'>
-              <TouchableOpacity>
-                <View className='top-20 items-center p-8 rounded-md h-30 justify-center border border-sky-300 drop-shadow-lg '>
+              <TouchableOpacity onPress={()=>navigation.navigate('ServiceProviders')}>
+                <View className='top-20 items-center p-8 rounded-md h-30 justify-center border border-sky-300 '>
                 <Image
             source={
                 require('../assets/images/microscope.png')
@@ -41,7 +43,7 @@ const Profile = () => {
                <Text className='text-slate-900'>Service Providers</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('TreatmentHistory')}>
                 <View className='top-20 items-center p-8 rounded-md h-30 justify-center border border-sky-200'>
                 <Image
             source={
